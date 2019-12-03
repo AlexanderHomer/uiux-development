@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { DropdownButton, Dropdown } from "react-bootstrap";
 import List from "./List";
+import ListElement from './ListElement';
+import RuleButton from './RuleButton';
 
 class FilteredList extends Component {
   constructor(props) {
@@ -16,7 +18,13 @@ class FilteredList extends Component {
     if (this.state.searchBy.includes(rule)) {
       this.state.searchBy.splice(this.state.searchBy.indexOf(rule), 1);
     } else {
-      this.state.searchBy.push(rule);
+      this.setState(
+        {
+          searchBy: [...this.state.searchBy, rule]
+        }
+      )
+      
+      
     }
   }
 
@@ -26,13 +34,17 @@ class FilteredList extends Component {
    * return list.
    */
   filterAndSearch = item => {
-    return this.state.searchBy.every(v => v(item));
+    console.log(this.state.searchBy);
+    return this.state.searchBy.length == 0 || this.state.searchBy.every(v => v(item));
   };
 
   render() {
     return (
       <div className="filter-list">
+
+        <RuleButton update = {this.toggleRule} rule = {item => {false}}/>
         <List items={this.props.items.filter(this.filterAndSearch)} />
+        
         
       </div>
     );

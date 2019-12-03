@@ -9,10 +9,10 @@ class RuleButton extends Component {
     };
   }
 
-  toggleRule = () => {
+  toggle = () => {
     this.state.selected = !this.state.selected;
 
-    this.props.list.toggleRule(this.props.rule)
+    this.props.update(this.props.rule);
   }
 
 
@@ -22,7 +22,7 @@ class RuleButton extends Component {
 
       <div>
       Test
-      <button onClick = {this.toggleRule}>Test</button>
+      <button onClick = {this.toggle}>Test</button>
       
       </div>
       

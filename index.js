@@ -40,7 +40,6 @@ class App extends Component {
           We will put a filter UI Here
         </p>
 
-        <RuleButton list = {list} rule = {item => {false}}/>
         <p>
           The Filtered List will go here
         </p>
