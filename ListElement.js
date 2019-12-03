@@ -4,25 +4,23 @@ class ListElement extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      starred: false
     };
   }
 
 
+
   render() {
     return (
-      <div className="filter-list">
-        <h1>Cereal Search</h1>
-        {/* TODO: Add more menu items with onSelect handlers*/}
-        <DropdownButton title="Type" id="dropdown-basic-button">
-          <Dropdown.Item eventKey="all" onSelect={this.onSelectFilterType}>
-            All
-          </Dropdown.Item>
-        </DropdownButton>
-        <input type="text" placeholder="Search" onChange={this.onSearch} />
-        <List items={this.props.items.filter(this.filterAndSearch)} />
+      <div className="list-element">
+        Test
+        <h1>{this.props.name}</h1>
+        <p1>{this.props.number}</p1>
+        <p1>{this.props.track}</p1>
+        <p1>{this.props.starred}</p1>
       </div>
     );
   }
 }
 
-export default FilteredList;
+export default ListElement;
