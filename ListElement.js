@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import CardContent from "@material-ui/core/CardContent";
-import CardHeader from "@material-ui/core/CardActions";
+import CardHeader from "@material-ui/core/CardHeader";
 import Fab from "@material-ui/core/Fab";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 
@@ -15,6 +15,7 @@ class ListElement extends Component {
   }
 
   toggleFavorite = () => {
+    this.props.updateFavorites(this.props.name)
     this.setState({
       starred: !this.state.starred
     })
@@ -25,7 +26,7 @@ class ListElement extends Component {
     return (
       <div className="list-element">
         <Card className={this.props.name}>
-           <CardHeader
+          <CardHeader
             action={
               <Fab
                 color={this.state.starred ? "primary" : "inherit"}

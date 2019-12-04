@@ -16,12 +16,21 @@ class FilteredList extends Component {
     };
   }
 
-
   toggleRule = (name, rule) => {
     if (name in this.state.searchBy) {
-      remove(this.state.searchBy[name])
+      delete this.state.searchBy[name]
     } else {
       this.state.searchBy[name] = rule
+    }
+
+    this.forceUpdate()
+  }
+
+  toggleFavorites = (name) => {
+    if (name in this.state.favorites) {
+      remove(this.state.favorites[name])
+    } else {
+      this.state.favorites[name] = true
     }
 
     this.forceUpdate()
@@ -33,9 +42,12 @@ class FilteredList extends Component {
    * return list.
    */
   filterAndSearch = item => {
+    console.log("Filter")
+    console.log(item)
     var passP = true
 
-    for (rule in this.state.searchBy) {
+    for (var name in this.state.searchBy) {
+      var rule = this.state.searchBy[name]
       passP = passP && rule(item)
     }
 
@@ -146,7 +158,17 @@ class FilteredList extends Component {
       <div className="filter-list">
           
         <Paper>
-        <RuleButton update = {this.toggleRule} rule = {item => {return item.props.pathway == "Systems"}}/>
+        <div class = "filter-div">
+        <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.props.pathway == "Systems"}} rule_name = "Systems"/>
+        <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.props.pathway == "Robotics"}} rule_name = "Robotics"/>
+        <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.props.pathway == "Design"}} rule_name = "Design"/>
+        <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.props.pathway == "Engineering"}} rule_name = "Engineering"/>
+        </div>
+        <div class = "filter-div">
+        <RuleButton color = "secondary" update = {this.toggleRule} rule = {item => {return item.props.number >= 1000}} rule_name = "Upper Level"/>
+        <RuleButton color = "secondary"update = {this.toggleRule} rule = {item => {return item.props.number < 1000}} rule_name = "Lower Level"/>
+        <RuleButton color = "secondary"update = {this.toggleRule} rule = {item => {return item.props.name in this.state.favorites}} rule_name = "Favorites"/>
+        </div>
         </Paper>
         <List items={this.courses.filter(this.filterAndSearch)} />
         
