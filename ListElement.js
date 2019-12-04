@@ -39,9 +39,6 @@ class ListElement extends Component {
             title={this.props.name}
           />
           <CardContent>
-            <Typography variant="h5" component="h2">
-              {this.props.name}
-            </Typography>
             <Typography className="pathway" color="textSecondary">
               {this.props.pathway}
             </Typography>

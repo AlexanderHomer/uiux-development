@@ -12,7 +12,10 @@ class FilteredList extends Component {
     this.state = {
       // List of terms we are currently searching by
       searchBy: {},
-      favorites: {}
+      favorites: {},
+      sortRule: (course1, course2) => {
+      return course1.props.number - course2.props.number;
+    }
     };
   }
 
@@ -28,7 +31,7 @@ class FilteredList extends Component {
 
   toggleFavorites = (name) => {
     if (name in this.state.favorites) {
-      remove(this.state.favorites[name])
+      delete this.state.favorites[name]
     } else {
       this.state.favorites[name] = true
     }
@@ -170,7 +173,7 @@ class FilteredList extends Component {
         <RuleButton color = "secondary"update = {this.toggleRule} rule = {item => {return item.props.name in this.state.favorites}} rule_name = "Favorites"/>
         </div>
         </Paper>
-        <List items={this.courses.filter(this.filterAndSearch)} />
+        <List items={this.courses.filter(this.filterAndSearch).sort(this.state.sortRule)} />
         
         
       </div>
