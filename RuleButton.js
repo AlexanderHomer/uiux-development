@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Button from '@material-ui/core/Button';
-import RuleButton from './RuleButton';
 
 class RuleButton extends Component {
   constructor(props) {
@@ -16,8 +15,6 @@ class RuleButton extends Component {
     this.setState({
       selected: !this.state.selected
     });
-
-    
     this.forceUpdate()
   }
 
@@ -28,7 +25,7 @@ class RuleButton extends Component {
     return (
 
       <div>
-        <RuleButton color = {this.props.color} variant={this.state.selected ? "contained" : "outlined"} onClick={this.toggle}/>
+        <Button color = {this.props.color} variant={this.state.selected ? "contained" : "outlined"} onClick={this.toggle}>{this.state.rule_name}</Button>
       
       </div>
       

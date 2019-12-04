@@ -11,9 +11,11 @@ class FilteredList extends Component {
 
     this.state = {
       // List of terms we are currently searching by
-      searchBy: {}
+      searchBy: {},
+      favorites: {}
     };
   }
+
 
   toggleRule = (name, rule) => {
     if (name in this.state.searchBy) {
@@ -144,7 +146,7 @@ class FilteredList extends Component {
       <div className="filter-list">
           
         <Paper>
-        <RuleButton update = {this.toggleRule} rule = {item => {false}}/>
+        <RuleButton update = {this.toggleRule} rule = {item => {return item.props.pathway == "Systems"}}/>
         </Paper>
         <List items={this.courses.filter(this.filterAndSearch)} />
         
