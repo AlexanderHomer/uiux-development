@@ -1,28 +1,34 @@
 import React, { Component } from "react";
-import {Button} from '@material-ui/core'
+import Button from '@material-ui/core/Button';
+import RuleButton from './RuleButton';
 
 class RuleButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: false
+      selected: false,
+      style: "outlined",
     };
   }
 
   toggle = () => {
-    this.state.selected = !this.state.selected;
+    this.props.update(this.props.rule_name, this.props.rule);
+    this.setState({
+      selected: !this.state.selected
+    });
 
-    this.props.update(this.props.rule);
+    
+    this.forceUpdate()
   }
 
-
+  
+  
 
   render() {
     return (
 
       <div>
-      Test
-      <button onClick = {this.toggle}>Test</button>
+        <RuleButton color = {this.props.color} variant={this.state.selected ? "contained" : "outlined"} onClick={this.toggle}/>
       
       </div>
       

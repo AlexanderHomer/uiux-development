@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class List extends Component {
   renderList() {
     const items = this.props.items.map(item => {
-      return <li key={item.props.name}>{item.props.name}</li>
+      return item
     });
 
     return items;
@@ -11,9 +11,7 @@ class List extends Component {
 
   render() {
     return (
-      <ul>
-        {this.renderList()}
-      </ul>
+      this.renderList()
     );
   }
 }
