@@ -47,6 +47,7 @@ class ListElement extends Component {
             <Typography className="pathway" color="textSecondary">
               CSCI {this.props.number}
             </Typography>
+            
           </CardContent>
         </Card>
       </div>
