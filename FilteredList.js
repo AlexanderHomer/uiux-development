@@ -68,8 +68,6 @@ class FilteredList extends Component {
    * return list.
    */
   filterAndSearch = item => {
-    console.log("Filter")
-    console.log(item)
     var passP = true
 
     for (var name in this.state.searchBy) {
@@ -241,7 +239,7 @@ class FilteredList extends Component {
             </h1>
           </AppBar>
           <div class = "filters">
-              <FilterBlock color = "inherited" items={this.track_filter} toggleRule = {this.toggleRule} active = {this.active}/>
+              <FilterBlock items={this.track_filter} toggleRule = {this.toggleRule} active = {this.active}/>
               <FilterBlock color = "primary" items={this.level_filter} toggleRule = {this.toggleRule} active = {this.active}/>
               <FilterBlock color = "secondary" items={this.favorites_filter} toggleRule = {this.toggleRule} active = {this.active}/>
 
