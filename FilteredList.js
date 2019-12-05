@@ -100,7 +100,96 @@ class FilteredList extends Component {
       name:"Introduction to Software Engineering",
       number:320,
       pathway:"Engineering",
-      professor:"Nelson"
+      professor:"Nelson",
+      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+    }
+
+  ,
+    {
+      name:"User Interfaces and User Experience",
+      number:1300,
+      pathway:"Design",
+      professor:"Huang",
+      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+    }
+
+  ,
+    {
+      name:"Theory of Computation",
+      number:1010,
+      pathway:"Theory",
+      professor:"Doeppner",
+      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+    }
+
+  ,
+    {
+      name:"The Digital World",
+      number:20,
+      pathway:"Systems",
+      professor:"Stanford",
+      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+    }
+  
+  ,
+    {
+      name:"Introduction to Robotics",
+      number:1951,
+      pathway:"Robotics",
+      professor:"Tellex",
+      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+    }
+  ,
+    {
+      name:"Designing Humanity Centered Robots",
+      number:1952,
+      pathway:"Robotics",
+      professor:"Gonsher",
+      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+    }
+  ,
+    {
+      name:"Deep Learning",
+      number:1470,
+      pathway:"Machine Learning",
+      professor:"Ritchie",
+      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+    }
+
+  ,
+    {
+      name:"Cybersecurity Ethics",
+      number:1870,
+      pathway:"Security",
+      professor:"Hurley",
+      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+    }
+
+  ,
+    {
+      name:"Design and Implmentation of Programming Languages",
+      number:1730,
+      pathway:"Systems",
+      professor:"Krishnamurthi",
+      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+    }
+
+  ,
+    {
+      name:"Computer Networks",
+      number:1680,
+      pathway:"Systems",
+      professor:"Fonseca",
+      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+    }
+  
+  ,
+    {
+      name:"Compilers and Program Analysis",
+      number:1260,
+      pathway:"Systems",
+      professor:"Reiss",
+      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
     }
   ];
 

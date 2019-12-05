@@ -33,6 +33,7 @@ header h1 {
   display:flex;
   flex-flow: row wrap;
   background-color: white;
+  justify-content: center;
 }
 
 .sort {
@@ -42,6 +43,7 @@ header h1 {
 .element-list {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
 }
 
 .list-element {
@@ -54,9 +56,10 @@ header h1 {
   justify-content: space-between
 }
 
-img {
+.professor img {
   height: 50px
 }
+
 
 h1, p {
   font-family: Lato;

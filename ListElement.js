@@ -52,7 +52,12 @@ class ListElement extends Component {
                 </Typography>
                 </div>
               </div>
-              <img src={this.props.image_url}/>
+              <div class = "professor" align="right">
+                <img src={this.props.image_url}/>
+                <Typography className="pathway" color="textSecondary">
+                  Professor {this.props.professor}
+                </Typography>
+              </div>
             </div>
           </CardContent>
         </Card>
