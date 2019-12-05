@@ -16,6 +16,7 @@ class FilteredList extends Component {
       // List of terms we are currently searching by
       searchBy: {},
       favorites: {},
+      defaultSort: true,
       sortRule: (course1, course2) => {
       return course1.number - course2.number;
     }
@@ -27,6 +28,7 @@ class FilteredList extends Component {
       {
         searchBy: {},
         favorites: {},
+        defaultSort: true,
         sortRule: (course1, course2) => {
         return course1.number - course2.number;}
       })
@@ -34,7 +36,8 @@ class FilteredList extends Component {
 
   toggleSort = (rule) => {
     this.setState({
-      sortRule: rule
+      sortRule: rule,
+      defaultSort: !this.state.defaultSort,
     })
   }
 
@@ -77,10 +80,11 @@ class FilteredList extends Component {
   };
 
   checkFav = (name) => {
-    console.log("")
-    console.log(name)
-    console.log(this.state.favorites)
     return name in this.state.favorites
+  }
+
+  active = (name) => {
+    return name in this.state.searchBy
   }
 
   courses = [
@@ -89,6 +93,7 @@ class FilteredList extends Component {
       number:330,
       pathway:"Systems",
       professor:"Doeppner",
+      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
     }
   ,
     {
@@ -111,15 +116,15 @@ class FilteredList extends Component {
           <div class = "filters">
 
               <div class = "filter-div">
-                <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.pathway == "Systems"}} rule_name = "Systems"/>
-                <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.pathway == "Robotics"}} rule_name = "Robotics"/>
-                <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.pathway == "Design"}} rule_name = "Design"/>
-                <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.pathway == "Engineering"}} rule_name = "Engineering"/>
+                <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.pathway == "Systems"}} rule_name = "Systems" active = {this.active}/>
+                <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.pathway == "Robotics"}} rule_name = "Robotics" active = {this.active}/>
+                <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.pathway == "Design"}} rule_name = "Design" active = {this.active}/>
+                <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.pathway == "Engineering"}} rule_name = "Engineering" active = {this.active}/>
               </div>
               <div class = "filter-div">
-                <RuleButton color = "secondary" update = {this.toggleRule} rule = {item => {return item.number >= 1000}} rule_name = "Upper Level"/>
-                <RuleButton color = "secondary"update = {this.toggleRule} rule = {item => {return item.number < 1000}} rule_name = "Lower Level"/>
-                <RuleButton color = "secondary" update = {this.toggleRule} rule = {item => {return item.name in this.state.favorites}} rule_name = "Favorites"/>
+                <RuleButton color = "secondary" update = {this.toggleRule} rule = {item => {return item.number >= 1000}} rule_name = "Upper Level" active = {this.active}/>
+                <RuleButton color = "secondary" update = {this.toggleRule} rule = {item => {return item.number < 1000}} rule_name = "Lower Level" active = {this.active}/>
+                <RuleButton color = "secondary" update = {this.toggleRule} rule = {item => {return item.name in this.state.favorites}} rule_name = "Favorites" active = {this.active}/>
               </div>
 
               <IconButton onClick={this.reset}>
@@ -130,16 +135,16 @@ class FilteredList extends Component {
         </header>
         <div class = 'sort'>
           <SortButton update = {this.toggleSort} 
-          rule1 = {(course1, course2) => {return course1.props.number - course2.props.number;}}
+          rule1 = {(course1, course2) => {return course1.number - course2.number;}}
           rule2 = {(course1, course2) => {
-                    if(course1.props.name < course2.props.name) { return -1; }
-                    if(course1.props.name > course2.props.name) { return 1; }
+                    if(course1.name < course2.name) { return -1; }
+                    if(course1.name > course2.name) { return 1; }
                     return 0;}}
-          default_name = "Sort By Course Number" 
-          other_name = "Sort By Name"/>
+          default_name = "Sorting By Course Number" 
+          other_name = "Sorting By Name"
+          default_sort = {this.state.defaultSort}/>
         </div>
         <List items={this.courses.filter(this.filterAndSearch).sort(this.state.sortRule)} checkFav={this.checkFav} toggleFavorites = {this.toggleFavorites}/>
-        
         
       </div>
     );

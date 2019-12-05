@@ -49,6 +49,15 @@ header h1 {
   width: 500px;
 }
 
+.card {
+  display: flex;
+  justify-content: space-between
+}
+
+img {
+  height: 50px
+}
+
 h1, p {
   font-family: Lato;
 }

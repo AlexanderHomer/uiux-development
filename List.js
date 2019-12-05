@@ -11,6 +11,7 @@ class List extends Component {
                 professor={item.professor}
                 starred={this.props.checkFav}
                 updateFavorites={this.props.toggleFavorites}
+                image_url = {item.image_url}
               />
     });
 

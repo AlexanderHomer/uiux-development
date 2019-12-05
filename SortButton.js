@@ -6,23 +6,19 @@ class SortButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      default_state: false,
       style: "contained",
     };
   }
 
   toggle = () => {
     var sort_rule = null
-    if (this.state.default_state) {
-      sort_rule = this.props.rule1
-    } else {
+    if (this.props.default_sort) {
       sort_rule = this.props.rule2
+    } else {
+      sort_rule = this.props.rule1
     }
       
     this.props.update(sort_rule);
-    this.setState({
-      default_state: !this.state.default_state
-    });
   }
 
   
@@ -32,7 +28,7 @@ class SortButton extends Component {
     return (
 
       <div>
-        <Button variant={this.state.style} onClick={this.toggle}>{this.state.default_state ? this.props.default_name : this.props.other_name}</Button>
+        <Button variant={this.state.style} onClick={this.toggle}>{this.props.default_sort ? this.props.default_name : this.props.other_name}</Button>
       
       </div>
       

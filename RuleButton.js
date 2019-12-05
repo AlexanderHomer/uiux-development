@@ -12,9 +12,6 @@ class RuleButton extends Component {
 
   toggle = () => {
     this.props.update(this.props.rule_name, this.props.rule);
-    this.setState({
-      selected: !this.state.selected
-    });
     this.forceUpdate()
   }
 
@@ -25,7 +22,7 @@ class RuleButton extends Component {
     return (
 
       <div>
-        <Button color = {this.props.color} variant={this.state.selected ? "contained" : "outlined"} onClick={this.toggle}>{this.props.rule_name}</Button>
+        <Button color = {this.props.color} variant={this.props.active(this.props.rule_name) ? "contained" : "outlined"} onClick={this.toggle}>{this.props.rule_name}</Button>
       
       </div>
       
