@@ -29,7 +29,7 @@ class ListElement extends Component {
           <CardHeader
             action={
               <Fab
-                color={this.state.starred ? "primary" : "inherit"}
+                color={(this.props.name in this.props.favorites) ? "primary" : "inherit"}
                 size="small"
                 onClick={this.toggleFavorite}
               >
