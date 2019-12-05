@@ -23,7 +23,7 @@ header h1 {
 .filter-div {
   margin: 0em;
   padding: 0.5em;
-  width: 500px;
+  width: auto;
   display: flex;
   justify-content: space-around;
 
@@ -34,6 +34,10 @@ header h1 {
   flex-flow: row wrap;
   background-color: white;
   justify-content: center;
+}
+
+.rule-button {
+  padding: 0.2em;
 }
 
 .sort {

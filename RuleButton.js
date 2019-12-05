@@ -21,7 +21,7 @@ class RuleButton extends Component {
   render() {
     return (
 
-      <div>
+      <div class = "rule-button">
         <Button color = {this.props.color} variant={this.props.active(this.props.rule_name) ? "contained" : "outlined"} onClick={this.toggle}>{this.props.rule_name}</Button>
       
       </div>
