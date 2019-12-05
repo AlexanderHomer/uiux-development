@@ -31,7 +31,7 @@ class ListElement extends Component {
           <CardHeader
             action={
               <Fab
-                color={(this.props.starred(this.props.name)) ? "primary" : "inherit"}
+                color={(this.props.starred(this.props.name)) ? "secondary" : "inherit"}
                 size="small"
                 onClick={this.toggleFavorite}
               >

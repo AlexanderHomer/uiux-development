@@ -7,6 +7,7 @@ import SortButton from './SortButton';
 import {Card, Paper, AppBar, IconButton} from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import { createMuiTheme } from '@material-ui/core/styles';
+import FilterBlock from './FilterBlock';
 
 class FilteredList extends Component {
   constructor(props) {
@@ -240,18 +241,11 @@ class FilteredList extends Component {
             </h1>
           </AppBar>
           <div class = "filters">
+              <FilterBlock color = "inherited" items={this.track_filter} toggleRule = {this.toggleRule} active = {this.active}/>
+              <FilterBlock color = "primary" items={this.level_filter} toggleRule = {this.toggleRule} active = {this.active}/>
+              <FilterBlock color = "secondary" items={this.favorites_filter} toggleRule = {this.toggleRule} active = {this.active}/>
 
-              <div class = "filter-div">
-                <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.pathway == "Systems"}} rule_name = "Systems" active = {this.active}/>
-                <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.pathway == "Robotics"}} rule_name = "Robotics" active = {this.active}/>
-                <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.pathway == "Design"}} rule_name = "Design" active = {this.active}/>
-                <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.pathway == "Engineering"}} rule_name = "Engineering" active = {this.active}/>
-              </div>
-              <div class = "filter-div">
-                <RuleButton color = "secondary" update = {this.toggleRule} rule = {item => {return item.number >= 1000}} rule_name = "Upper Level" active = {this.active}/>
-                <RuleButton color = "secondary" update = {this.toggleRule} rule = {item => {return item.number < 1000}} rule_name = "Lower Level" active = {this.active}/>
-                <RuleButton color = "secondary" update = {this.toggleRule} rule = {item => {return item.name in this.state.favorites}} rule_name = "Favorites" active = {this.active}/>
-              </div>
+
 
               <IconButton onClick={this.reset}>
                   <CloseIcon />

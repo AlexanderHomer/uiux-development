@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import ListElement from './ListElement'
+import RuleButton from './RuleButton'
+import { createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
+
 
 class List extends Component {
   renderList() {
     const items = this.props.items.map(item => {
       return <RuleButton 
-                color = "primary"
+                color = {this.props.color}
                 rule = {item.rule}
                 rule_name = {item.rule_name} 
                 update = {this.props.toggleRule} 
