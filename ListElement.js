@@ -10,11 +10,13 @@ import { createMuiTheme } from '@material-ui/core/styles';
 class ListElement extends Component {
   constructor(props) {
     super(props);
+    // store a state variable that says whether this element is favorited or not
     this.state = {
       starred: false
     };
   }
 
+  // toggles whether this list element is a favorite
   toggleFavorite = () => {
     this.props.updateFavorites(this.props.name)
     this.forceUpdate()
@@ -26,11 +28,13 @@ class ListElement extends Component {
 
   render() {
     return (
+      // we're using a card format for each list element
       <div className="list-element">
         <Card className={this.props.name}>
           <CardHeader
             action={
               <Fab
+                // changes color based on if this element is favorited
                 color={(this.props.starred(this.props.name)) ? "secondary" : "inherit"}
                 size="small"
                 onClick={this.toggleFavorite}
@@ -40,6 +44,7 @@ class ListElement extends Component {
             }
             title={this.props.name}
           />
+          // the course info including name, number, and professor
           <CardContent>
             <div class = "card">
               <div class = "content">
