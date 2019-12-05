@@ -41,13 +41,17 @@ class ListElement extends Component {
             title={this.props.name}
           />
           <CardContent>
-            <Typography className="pathway" color="textSecondary">
-              {this.props.pathway}
-            </Typography>
-            <Typography className="pathway" color="textSecondary">
-              CSCI {this.props.number}
-            </Typography>
-            
+            <div class = "content">
+              <div>
+              <Typography className="pathway" color="textSecondary">
+                {this.props.pathway}
+              </Typography>
+              <Typography className="pathway" color="textSecondary">
+                CSCI {this.props.number}
+              </Typography>
+              </div>
+              <img src="pic_trulli.jpg" alt={this.props.professor}/>
+            </div>
           </CardContent>
         </Card>
       </div>
