@@ -11,7 +11,9 @@ class List extends Component {
 
   render() {
     return (
-      this.renderList()
+      <div class="element-list">
+        {this.renderList()}
+      </div>
     );
   }
 }

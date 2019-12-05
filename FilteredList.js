@@ -4,7 +4,9 @@ import List from "./List";
 import ListElement from './ListElement';
 import RuleButton from './RuleButton';
 import SortButton from './SortButton';
-import {Card, Paper} from '@material-ui/core';
+import {Card, Paper, AppBar, IconButton} from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
+import { createMuiTheme } from '@material-ui/core/styles';
 
 class FilteredList extends Component {
   constructor(props) {
@@ -18,6 +20,16 @@ class FilteredList extends Component {
       return course1.props.number - course2.props.number;
     }
     };
+  }
+
+  reset = () => {
+    this.setState(
+      {
+        searchBy: {},
+        favorites: {},
+        sortRule: (course1, course2) => {
+        return course1.props.number - course2.props.number;}
+      })
   }
 
   toggleSort = (rule) => {
@@ -65,6 +77,9 @@ class FilteredList extends Component {
   };
 
   checkFav = (name) => {
+    console.log("")
+    console.log(name)
+    console.log(this.state.favorites)
     return name in this.state.favorites
   }
 
@@ -106,7 +121,7 @@ class FilteredList extends Component {
       number={20}
       pathway={"Systems"}
       professor={"Stanford"}
-      starred={false}
+      starred={this.checkFav}
       updateFavorites={this.toggleFavorites}
     />,
     <ListElement
@@ -114,7 +129,7 @@ class FilteredList extends Component {
       number={1951}
       pathway={"Robotics"}
       professor={"Tellex"}
-      starred={false}
+      starred={this.checkFav}
       updateFavorites={this.toggleFavorites}
     />,
     <ListElement
@@ -122,7 +137,7 @@ class FilteredList extends Component {
       number={1952}
       pathway={"Robotics"}
       professor={"Gonsher"}
-      starred={false}
+      starred={this.checkFav}
       updateFavorites={this.toggleFavorites}
     />,
     <ListElement
@@ -130,7 +145,7 @@ class FilteredList extends Component {
       number={1470}
       pathway={"Machine Learning"}
       professor={"Ritchie"}
-      starred={false}
+      starred={this.checkFav}
       updateFavorites={this.toggleFavorites}
     />,
     <ListElement
@@ -138,7 +153,7 @@ class FilteredList extends Component {
       number={1870}
       pathway={"Security"}
       professor={"Hurley"}
-      starred={false}
+      starred={this.checkFav}
       updateFavorites={this.toggleFavorites}
     />,
     <ListElement
@@ -146,7 +161,7 @@ class FilteredList extends Component {
       number={1730}
       pathway={"Systems"}
       professor={"Krishnamurthi"}
-      starred={false}
+      starred={this.checkFav}
       updateFavorites={this.toggleFavorites}
     />,
     <ListElement
@@ -154,7 +169,7 @@ class FilteredList extends Component {
       number={1680}
       pathway={"Systems"}
       professor={"Fonseca"}
-      starred={false}
+      starred={this.checkFav}
       updateFavorites={this.toggleFavorites}
     />,
     <ListElement
@@ -162,7 +177,7 @@ class FilteredList extends Component {
       number={1260}
       pathway={"Systems"}
       professor={"Reiss"}
-      starred={false}
+      starred={this.checkFav}
       updateFavorites={this.toggleFavorites}
     />,
   ];
@@ -170,30 +185,42 @@ class FilteredList extends Component {
   render() {
     return (
       <div className="filter-list">
-          
-        <Paper>
-        <div class = "filter-div">
-        <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.props.pathway == "Systems"}} rule_name = "Systems"/>
-        <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.props.pathway == "Robotics"}} rule_name = "Robotics"/>
-        <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.props.pathway == "Design"}} rule_name = "Design"/>
-        <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.props.pathway == "Engineering"}} rule_name = "Engineering"/>
-        </div>
-        <div class = "filter-div">
-        <RuleButton color = "secondary" update = {this.toggleRule} rule = {item => {return item.props.number >= 1000}} rule_name = "Upper Level"/>
-        <RuleButton color = "secondary"update = {this.toggleRule} rule = {item => {return item.props.number < 1000}} rule_name = "Lower Level"/>
-        <RuleButton color = "secondary" update = {this.toggleRule} rule = {item => {return item.props.name in this.state.favorites}} rule_name = "Favorites"/>
-        </div>
-        
-        </Paper>
-        <SortButton update = {this.toggleSort} 
-        rule1 = {(course1, course2) => {return course1.props.number - course2.props.number;}}
-        rule2 = {(course1, course2) => {
-                  if(course1.props.name < course2.props.name) { return -1; }
-                  if(course1.props.name > course2.props.name) { return 1; }
-                  return 0;}}
-        default_name = "Sort By Course Number" 
-        other_name = "Sort By Name"/>
+        <header>
+          <AppBar position="static">
+            <h1>
+              Welcome to the CS Dept. Course Catalog
+            </h1>
+          </AppBar>
+          <div class = "filters">
 
+              <div class = "filter-div">
+                <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.props.pathway == "Systems"}} rule_name = "Systems"/>
+                <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.props.pathway == "Robotics"}} rule_name = "Robotics"/>
+                <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.props.pathway == "Design"}} rule_name = "Design"/>
+                <RuleButton color = "primary" update = {this.toggleRule} rule = {item => {return item.props.pathway == "Engineering"}} rule_name = "Engineering"/>
+              </div>
+              <div class = "filter-div">
+                <RuleButton color = "secondary" update = {this.toggleRule} rule = {item => {return item.props.number >= 1000}} rule_name = "Upper Level"/>
+                <RuleButton color = "secondary"update = {this.toggleRule} rule = {item => {return item.props.number < 1000}} rule_name = "Lower Level"/>
+                <RuleButton color = "secondary" update = {this.toggleRule} rule = {item => {return item.props.name in this.state.favorites}} rule_name = "Favorites"/>
+              </div>
+
+              <IconButton onClick={this.reset}>
+                  <CloseIcon />
+              </IconButton>
+
+          </div>
+        </header>
+        <div class = 'sort'>
+          <SortButton update = {this.toggleSort} 
+          rule1 = {(course1, course2) => {return course1.props.number - course2.props.number;}}
+          rule2 = {(course1, course2) => {
+                    if(course1.props.name < course2.props.name) { return -1; }
+                    if(course1.props.name > course2.props.name) { return 1; }
+                    return 0;}}
+          default_name = "Sort By Course Number" 
+          other_name = "Sort By Name"/>
+        </div>
         <List items={this.courses.filter(this.filterAndSearch).sort(this.state.sortRule)}/>
         
         

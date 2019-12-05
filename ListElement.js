@@ -5,6 +5,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
 import Fab from "@material-ui/core/Fab";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import { createMuiTheme } from '@material-ui/core/styles';
 
 class ListElement extends Component {
   constructor(props) {
@@ -16,11 +17,12 @@ class ListElement extends Component {
 
   toggleFavorite = () => {
     this.props.updateFavorites(this.props.name)
-    this.setState({
-      starred: !this.state.starred
-    })
+    this.forceUpdate()
   }
 
+  theme = createMuiTheme(
+    
+  )
 
   render() {
     return (
@@ -29,7 +31,7 @@ class ListElement extends Component {
           <CardHeader
             action={
               <Fab
-                color={(this.props.name in this.props.favorites) ? "primary" : "inherit"}
+                color={(this.props.starred(this.props.name)) ? "primary" : "inherit"}
                 size="small"
                 onClick={this.toggleFavorite}
               >

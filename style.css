@@ -1,14 +1,52 @@
 body {
-  background-color: rgb(200, 200, 200)
+  background-color: rgb(71, 144, 255);
+  padding: 0;
+  margin: 0
 }
-.filter-div {
-  margin: 0.5em;
-  padding: 0.5em;
+
+header {
+  color: white;
+
+}
+
+header h1 {
   display: flex;
-  justify-content: space-around
+  justify-content: space-around;
+  margin: 0.5em
 }
+
+.filter-list {
+  margin: 0;
+  
+}
+
+.filter-div {
+  margin: 0em;
+  padding: 0.5em;
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.filters {
+  display:flex;
+  flex-flow: row wrap;
+  background-color: white;
+}
+
+.sort {
+  margin: 0.5em
+}
+
+.element-list {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .list-element {
-  padding: 0.5em
+  padding: 0.5em;
+  width: 500px;
 }
 
 h1, p {

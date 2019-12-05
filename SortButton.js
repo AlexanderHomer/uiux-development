@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import Button from '@material-ui/core/Button';
 
+
 class SortButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
       default_state: false,
-      style: "outlined",
+      style: "contained",
     };
   }
 
@@ -31,7 +32,7 @@ class SortButton extends Component {
     return (
 
       <div>
-        <Button onClick={this.toggle}>{this.state.default_state ? this.props.default_name : this.props.other_name}</Button>
+        <Button variant={this.state.style} onClick={this.toggle}>{this.state.default_state ? this.props.default_name : this.props.other_name}</Button>
       
       </div>
       
