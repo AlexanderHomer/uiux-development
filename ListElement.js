@@ -22,10 +22,6 @@ class ListElement extends Component {
     this.forceUpdate()
   }
 
-  theme = createMuiTheme(
-    
-  )
-
   render() {
     return (
       // we're using a card format for each list element
@@ -52,7 +48,7 @@ class ListElement extends Component {
                 <Typography className="pathway" color="textSecondary">
                   {this.props.pathway}
                 </Typography>
-                <Typography className="pathway" color="textSecondary">
+                <Typography className="number" color="textSecondary">
                   CSCI {this.props.number}
                 </Typography>
                 </div>
