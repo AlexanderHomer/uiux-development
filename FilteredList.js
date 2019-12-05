@@ -193,6 +193,43 @@ class FilteredList extends Component {
     }
   ];
 
+  track_filter = [
+    {
+      rule: item => {return item.pathway == "Systems"},
+      rule_name: "Systems"
+    },
+    {
+      rule: item => {return item.pathway == "Robotics"},
+      rule_name: "Robotics"
+    },
+    {
+      rule: item => {return item.pathway == "Design"},
+      rule_name: "Design"
+    },
+    {
+      rule: item => {return item.pathway == "Engineering"},
+      rule_name: "Engineering"
+    },
+  ];
+
+  level_filter = [
+    {
+      rule: item => {return item.number >= 1000},
+      rule_name: "Upper Level"
+    },
+    {
+      rule: item => {return item.number < 1000},
+      rule_name: "Lower Level"
+    }
+  ];
+
+  favorites_filter = [
+    {
+      rule: item => {return item.name in this.state.favorites},
+      rule_name: "Favorites"
+    }
+  ];
+
   render() {
     return (
       <div className="filter-list">
