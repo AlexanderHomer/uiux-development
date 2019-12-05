@@ -93,7 +93,7 @@ class FilteredList extends Component {
       number:330,
       pathway:"Systems",
       professor:"Doeppner",
-      image_url: "https://pbs.twimg.com/profile_images/558349265408241665/69isWOE3_400x400.jpeg"
+      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
     }
   ,
     {
@@ -118,7 +118,7 @@ class FilteredList extends Component {
       name:"Theory of Computation",
       number:1010,
       pathway:"Theory",
-      professor:"Doeppner",
+      professor:"Lysyanskaya",
       image_url: "https://pbs.twimg.com/profile_images/558349265408241665/69isWOE3_400x400.jpeg"
     }
 
