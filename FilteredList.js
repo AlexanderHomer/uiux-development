@@ -93,7 +93,7 @@ class FilteredList extends Component {
       number:330,
       pathway:"Systems",
       professor:"Doeppner",
-      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+      image_url: "https://pbs.twimg.com/profile_images/558349265408241665/69isWOE3_400x400.jpeg"
     }
   ,
     {
@@ -101,7 +101,7 @@ class FilteredList extends Component {
       number:320,
       pathway:"Engineering",
       professor:"Nelson",
-      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+      image_url: "https://lh3.googleusercontent.com/proxy/0zd9uooQKcAC1vWl2Dt5QG-YoPplnDLPPW0UbcEDvsW0LUz8i_-TPG25Do_ASwVj0STHlTKHyLn402FKxNw=s0-w500-v1"
     }
 
   ,
@@ -110,7 +110,7 @@ class FilteredList extends Component {
       number:1300,
       pathway:"Design",
       professor:"Huang",
-      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+      image_url: "https://jeffhuang.com/img/headshot.jpg"
     }
 
   ,
@@ -119,7 +119,7 @@ class FilteredList extends Component {
       number:1010,
       pathway:"Theory",
       professor:"Doeppner",
-      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+      image_url: "https://pbs.twimg.com/profile_images/558349265408241665/69isWOE3_400x400.jpeg"
     }
 
   ,
@@ -128,7 +128,7 @@ class FilteredList extends Component {
       number:20,
       pathway:"Systems",
       professor:"Stanford",
-      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+      image_url: "https://www.businessinnovationfactory.com/wp-content/uploads/2017/12/6220704783_463db1eb4f_o.jpg"
     }
   
   ,
@@ -137,7 +137,7 @@ class FilteredList extends Component {
       number:1951,
       pathway:"Robotics",
       professor:"Tellex",
-      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+      image_url: "https://www.datainnovation.org/wp-content/uploads/2016/10/tellex.jpg"
     }
   ,
     {
@@ -145,7 +145,7 @@ class FilteredList extends Component {
       number:1952,
       pathway:"Robotics",
       professor:"Gonsher",
-      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+      image_url: "https://miro.medium.com/max/3150/1*WUHCPI3Hp5cf7rn7yltPcw.jpeg"
     }
   ,
     {
@@ -153,7 +153,7 @@ class FilteredList extends Component {
       number:1470,
       pathway:"Machine Learning",
       professor:"Ritchie",
-      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+      image_url: "https://dritchie.github.io/img/me.jpg"
     }
 
   ,
@@ -162,16 +162,16 @@ class FilteredList extends Component {
       number:1870,
       pathway:"Security",
       professor:"Hurley",
-      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+      image_url: "https://static.scholar.harvard.edu/files/styles/square_thumbnail/public/deborah_hurley/files/deborah-hurley_1_0.jpg?m=1472680486&itok=LlTx3y8O"
     }
 
   ,
     {
-      name:"Design and Implmentation of Programming Languages",
+      name:"Design and Implementation of Programming Languages",
       number:1730,
       pathway:"Systems",
       professor:"Krishnamurthi",
-      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+      image_url: "https://pldi19.sigplan.org/getProfileImage/shriramkrishnamurthi/df26d0ba-b4a0-447b-a0ee-f20bed37ad18/small.jpg?1562991872000"
     }
 
   ,
@@ -180,7 +180,7 @@ class FilteredList extends Component {
       number:1680,
       pathway:"Systems",
       professor:"Fonseca",
-      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+      image_url: "https://nizamtaher.files.wordpress.com/2013/05/ist2_6764102-computer-network.jpg"
     }
   
   ,
@@ -189,7 +189,7 @@ class FilteredList extends Component {
       number:1260,
       pathway:"Systems",
       professor:"Reiss",
-      image_url: "https://lh4.googleusercontent.com/-tZfRbqNN-08/AAAAAAAAAAI/AAAAAAAAACE/h-fFVIhljQM/photo.jpg"
+      image_url: "https://techcrunch.com/wp-content/uploads/2015/04/codecode.jpg?w=730&crop=1"
     }
   ];
 
