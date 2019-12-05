@@ -1,9 +1,17 @@
 import React, {Component} from 'react';
+import ListElement from './ListElement'
 
 class List extends Component {
   renderList() {
     const items = this.props.items.map(item => {
-      return item
+      return <ListElement
+                name={item.name}
+                number={item.number}
+                pathway={item.pathway}
+                professor={item.professor}
+                starred={this.props.checkFav}
+                updateFavorites={this.props.toggleFavorites}
+              />
     });
 
     return items;
